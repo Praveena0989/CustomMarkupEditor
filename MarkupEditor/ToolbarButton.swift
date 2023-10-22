@@ -80,7 +80,7 @@ public struct ToolbarTextButton: View {
     
     public var body: some View {
         Button(action: action, label: {
-            Text(title)
+            Text("title")
                 .frame(width: width, height: toolbarStyle.buttonHeight())
                 .padding(.horizontal, 8)
                 .background(
