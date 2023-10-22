@@ -41,7 +41,7 @@ public struct ToolbarImageButton<Content: View>: View {
         self.image = content()
         self.action = action
         _active = active
-        self.activeColor = activeColor
+        self.activeColor = .purple
         self.onHover = onHover
     }
     
