@@ -5,7 +5,7 @@ body {
 }
 
 #editor {
-    caret-color: blue;
+    caret-color: purple;
     cursor: auto;
     /* The overflow and margin are set primarily to deal gracefully with
      * selecting resizable images that are at the edge of the screen.
@@ -26,7 +26,7 @@ a {
 }
 @media (prefers-color-scheme: dark) {
     a {
-        color: #4183c4;
+        color: #800080;
     }
 }
 
