@@ -175,14 +175,14 @@ class LinkViewController: UIViewController {
     /// the default action so is not changed here.
     private func setSaveCancel(_ button: UIButton) {
         if saveButton.isEnabled {
-            saveButton.configuration?.baseBackgroundColor = Color.purple
+            saveButton.configuration?.baseBackgroundColor = UIColor(Color.purple)
             saveButton.configuration?.baseForegroundColor = view.backgroundColor
             cancelButton.configuration?.baseBackgroundColor = view.backgroundColor
-            cancelButton.configuration?.baseForegroundColor =  Color.purple
+            cancelButton.configuration?.baseForegroundColor =  UIColor(Color.purple)
         } else {
             saveButton.configuration?.baseBackgroundColor = view.backgroundColor
-            saveButton.configuration?.baseForegroundColor =  Color.purple
-            cancelButton.configuration?.baseBackgroundColor =  Color.purple
+            saveButton.configuration?.baseForegroundColor =  UIColor(Color.purple)
+            cancelButton.configuration?.baseBackgroundColor =  UIColor(Color.purple)
             cancelButton.configuration?.baseForegroundColor = view.backgroundColor
         }
     }
