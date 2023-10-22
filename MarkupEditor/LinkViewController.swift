@@ -88,7 +88,6 @@ class LinkViewController: UIViewController {
         view.addSubview(buttonStack)
         removeButton = UIButton(configuration: .borderedProminent(), primaryAction: nil)
         removeButton.preferredBehavioralStyle = UIBehavioralStyle.pad
-        removeButton.configuration?.baseBackgroundColor = view.backgroundColor
         removeButton.configuration?.title = "Remove Link"
         // Avoid word wrapping
         removeButton.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
