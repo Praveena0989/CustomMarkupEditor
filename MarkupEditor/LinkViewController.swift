@@ -74,7 +74,7 @@ class LinkViewController: UIViewController {
         linkViewLabel.isHidden = !linkView.text.isEmpty
         // Show that the linkView has focus
         linkView.layer.borderWidth = 2
-        linkView.layer.borderColor = view.tintColor.cgColor
+        linkView.layer.borderColor =  Color.purple.cgColor
         view.addSubview(linkView)
     }
     
@@ -122,7 +122,7 @@ class LinkViewController: UIViewController {
         // just random text on the screen that might or might not be a button.
         cancelButton.layer.cornerRadius = 5
         cancelButton.layer.borderWidth = 0.8
-        cancelButton.layer.borderColor = view.tintColor.cgColor
+        cancelButton.layer.borderColor = Color.purple.cgColor
         buttonStack.addArrangedSubview(cancelButton)
         saveButton = UIButton(configuration: .borderedProminent(), primaryAction: nil)
         saveButton.preferredBehavioralStyle = UIBehavioralStyle.pad
@@ -174,14 +174,14 @@ class LinkViewController: UIViewController {
     /// the default action so is not changed here.
     private func setSaveCancel(_ button: UIButton) {
         if saveButton.isEnabled {
-            saveButton.configuration?.baseBackgroundColor = view.tintColor
+            saveButton.configuration?.baseBackgroundColor = Color.purple
             saveButton.configuration?.baseForegroundColor = view.backgroundColor
             cancelButton.configuration?.baseBackgroundColor = view.backgroundColor
-            cancelButton.configuration?.baseForegroundColor = view.tintColor
+            cancelButton.configuration?.baseForegroundColor =  Color.purple
         } else {
             saveButton.configuration?.baseBackgroundColor = view.backgroundColor
-            saveButton.configuration?.baseForegroundColor = view.tintColor
-            cancelButton.configuration?.baseBackgroundColor = view.tintColor
+            saveButton.configuration?.baseForegroundColor =  Color.purple
+            cancelButton.configuration?.baseBackgroundColor =  Color.purple
             cancelButton.configuration?.baseForegroundColor = view.backgroundColor
         }
     }
@@ -193,7 +193,7 @@ class LinkViewController: UIViewController {
     private func setButtons() {
         removeButton.isEnabled = MarkupEditor.selectionState.isInLink
         if removeButton.isEnabled {
-            removeButton.layer.borderColor = view.tintColor.cgColor
+            removeButton.layer.borderColor =  Color.purple.cgColor
         } else {
             removeButton.layer.borderColor = UIColor.clear.cgColor
         }
