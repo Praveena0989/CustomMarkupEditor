@@ -36,7 +36,7 @@ public struct ToolbarImageButton<Content: View>: View {
     }
 
     /// Initialize a button using content. See the extension where Content == EmptyView for the systemName style initialization.
-    public init(action: @escaping ()->Void, active: Binding<Bool> = .constant(false), activeColor: Color = .accentColor, onHover: ((Bool)->Void)? = nil, @ViewBuilder content: ()->Content) {
+    public init(action: @escaping ()->Void, active: Binding<Bool> = .constant(false), activeColor: Color = .purple, onHover: ((Bool)->Void)? = nil, @ViewBuilder content: ()->Content) {
         self.systemName = nil
         self.image = content()
         self.action = action
