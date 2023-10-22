@@ -59,7 +59,7 @@ public struct ToolbarImageButton<Content: View>: View {
 extension ToolbarImageButton where Content == EmptyView {
     
     /// Initialize a button using a systemImage which will override content, even if passed-in. Intended for use without a content block.
-    public init(systemName: String, action: @escaping ()->Void, active: Binding<Bool> = .constant(false), activeColor: Color = .accentColor, onHover: ((Bool)->Void)? = nil, @ViewBuilder content: ()->Content = { EmptyView() }) {
+    public init(systemName: String, action: @escaping ()->Void, active: Binding<Bool> = .constant(false), activeColor: Color = .purple, onHover: ((Bool)->Void)? = nil, @ViewBuilder content: ()->Content = { EmptyView() }) {
         self.systemName = systemName
         self.image = content()
         self.action = action
@@ -88,7 +88,7 @@ public struct ToolbarTextButton: View {
                         cornerRadius: 3,
                         style: .continuous
                     )
-                    .stroke(Color.accentColor)
+                    .stroke(Color.purple)
                     .background(Color(UIColor.systemGray6))
                 )
         })
@@ -96,7 +96,7 @@ public struct ToolbarTextButton: View {
         .buttonStyle(ToolbarButtonStyle(active: $active, activeColor: activeColor))
     }
     
-    public init(title: String, action: @escaping ()->Void, width: CGFloat? = nil, active: Binding<Bool> = .constant(false), activeColor: Color = .accentColor) {
+    public init(title: String, action: @escaping ()->Void, width: CGFloat? = nil, active: Binding<Bool> = .constant(false), activeColor: Color = .purple) {
         self.title = title
         self.action = action
         self.width = width
@@ -124,7 +124,7 @@ public struct ToolbarButtonStyle: ButtonStyle {
                     cornerRadius: 3,
                     style: .continuous
                 )
-                .stroke(Color.accentColor)
+                .stroke(Color.purple)
             )
             .background(
                 RoundedRectangle(

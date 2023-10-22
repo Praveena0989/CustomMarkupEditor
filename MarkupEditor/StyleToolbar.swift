@@ -53,7 +53,7 @@ public struct StyleToolbar: View {
                             cornerRadius: 3,
                             style: .continuous
                         )
-                        .stroke(Color.accentColor)
+                        .stroke(Color.purple)
                     )
                     .disabled(!selectionState.canStyle)
                 } else {
@@ -75,7 +75,7 @@ public struct StyleToolbar: View {
                             cornerRadius: 3,
                             style: .continuous
                         )
-                        .stroke(Color.accentColor)
+                        .stroke(Color.purple)
                     )
                     .disabled(!selectionState.canStyle)
                 }

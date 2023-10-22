@@ -79,7 +79,7 @@ struct TableCell: View {
         ZStack {
             Rectangle()
                 .frame(width: width, height: height)
-                .foregroundColor(selected ? Color.accentColor.opacity(0.3) : Color (UIColor.systemBackground).opacity(0.3))
+                .foregroundColor(selected ? Color.purple.opacity(0.3) : Color (UIColor.systemBackground).opacity(0.3))
             if deleted {
                 Image(systemName: "xmark")
                     .foregroundColor(Color.red)
@@ -104,8 +104,8 @@ struct TableIconBorder: View {
     private struct EdgeColor {
         static let activeBorder: Color = Color(UIColor.systemBackground)
         static let activeOutline: Color = Color(UIColor.systemBackground)
-        static let inactiveBorder: Color = .accentColor
-        static let inactiveOutline: Color = .accentColor
+        static let inactiveBorder: Color = .purple
+        static let inactiveOutline: Color = .purple
     }
 
     private struct EdgeWidth {
