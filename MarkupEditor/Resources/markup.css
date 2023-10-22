@@ -5,7 +5,7 @@ body {
 }
 
 #editor {
-    caret-color: purple;
+    caret-color: #BF5AF2;
     cursor: auto;
     /* The overflow and margin are set primarily to deal gracefully with
      * selecting resizable images that are at the edge of the screen.
