@@ -38,10 +38,6 @@ public struct MarkupToolbar: View {
                             if contents.leftToolbar { Divider() }
                             CorrectionToolbar()
                         }
-                        if contents.insert {
-                            if contents.leftToolbar || contents.correction { Divider() }
-                            InsertToolbar()
-                        }
                         if contents.style {
                             if contents.leftToolbar || contents.correction  || contents.insert { Divider() }
                             StyleToolbar()
@@ -53,6 +49,10 @@ public struct MarkupToolbar: View {
                         if contents.rightToolbar {
                             if contents.leftToolbar || contents.correction  || contents.insert || contents.style || contents.format { Divider() }
                             MarkupEditor.rightToolbar!
+                        }
+                        if contents.insert {
+                            if contents.leftToolbar || contents.correction { Divider() }
+                            InsertToolbar()
                         }
                         Spacer()                // Push everything to the left
                     }

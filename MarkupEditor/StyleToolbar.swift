@@ -42,7 +42,7 @@ public struct StyleToolbar: View {
                     } label: {
                         // Note foreground color is black on Mac Catalyst, which
                         // doesn't seem to be settable at all with "Optimized for Mac"
-                        Text(selectionState.style.name)
+                        Text(selectionState.style.name).foregroundColor(.purple)
                             .frame(width: 88, height: toolbarStyle.buttonHeight(), alignment: .center)
                     }
                     .buttonStyle(.borderless)
