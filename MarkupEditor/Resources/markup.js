@@ -1516,7 +1516,7 @@ const undoer = new Undoer(_undoOperation, _redoOperation, null);
  * particularly for _toggleFormat. Not sure how reproducible it is or if there is
  * a determinate way to do it, as this just seems like a hack.
  */
-const _focusOn = function(target, delay=20) {
+const _focusOn = function(target, delay=0) {
     return new Promise((resolve, reject) => {
         window.setTimeout(function() {
             target.focus({ preventScroll:true });
