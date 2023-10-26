@@ -41,13 +41,13 @@ public struct MarkupToolbar: View {
                         if contents.format {
                             FormatToolbar()
                         }
-                        if contents.rightToolbar {
-                            if contents.leftToolbar || contents.correction  || contents.insert || contents.style || contents.format { Divider() }
-                            MarkupEditor.rightToolbar!
-                        }
                         if contents.style {
                             if contents.leftToolbar || contents.correction  || contents.insert { Divider() }
                             StyleToolbar()
+                        }
+                        if contents.rightToolbar {
+                            if contents.leftToolbar || contents.correction  || contents.insert || contents.style || contents.format { Divider() }
+                            MarkupEditor.rightToolbar!
                         }
                         if contents.insert {
                             if contents.leftToolbar || contents.correction { Divider() }

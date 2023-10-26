@@ -21,6 +21,34 @@ public struct StyleToolbar: View {
 
     public var body: some View {
         LabeledToolbar(label: hoverLabel) {
+            if contents.list {
+                ToolbarImageButton(
+                    systemName: "list.bullet",
+                    action: { observedWebView.selectedWebView?.toggleListItem(type: .UL) },
+                    active: Binding<Bool>(get: { selectionState.isInListItem && selectionState.list == .UL }, set: { _ = $0 }),
+                    onHover: { over in hoverLabel = Text(over ? "Bullets" : "Paragraph Style") }
+                )
+                ToolbarImageButton(
+                    systemName: "list.number",
+                    action: { observedWebView.selectedWebView?.toggleListItem(type: .OL) },
+                    active: Binding<Bool>(get: { selectionState.isInListItem && selectionState.list == .OL }, set: { _ = $0 }),
+                    onHover: { over in hoverLabel = Text(over ? "Numbers" : "Paragraph Style") }
+                )
+            }
+            if contents.dent {
+                ToolbarImageButton(
+                    systemName: "increase.quotelevel",
+                    action: { observedWebView.selectedWebView?.indent() },
+                    active: Binding<Bool>(get: { selectionState.quote }, set: { _ = $0 }),
+                    onHover: { over in hoverLabel = Text(over ? "Indent" : "Paragraph Style") }
+                )
+                ToolbarImageButton(
+                    systemName: "decrease.quotelevel",
+                    action: { observedWebView.selectedWebView?.outdent() },
+                    active: Binding<Bool>(get: { selectionState.quote }, set: { _ = $0 }),
+                    onHover: { over in hoverLabel = Text(over ? "Outdent" : "Paragraph Style") }
+                )
+            }
             // I spent a long time trying to make the drop-down buttons show in the proper font.
             // AFAICT, Apple is doing something aggressive to prevent that from happening.
             // Maybe it messes something up on MacOS. OTOH, I see it on OneNote as a kind of
@@ -82,34 +110,6 @@ public struct StyleToolbar: View {
                 if contents.list || contents.dent {
                     Divider()
                 }
-            }
-            if contents.list {
-                ToolbarImageButton(
-                    systemName: "list.bullet",
-                    action: { observedWebView.selectedWebView?.toggleListItem(type: .UL) },
-                    active: Binding<Bool>(get: { selectionState.isInListItem && selectionState.list == .UL }, set: { _ = $0 }),
-                    onHover: { over in hoverLabel = Text(over ? "Bullets" : "Paragraph Style") }
-                )
-                ToolbarImageButton(
-                    systemName: "list.number",
-                    action: { observedWebView.selectedWebView?.toggleListItem(type: .OL) },
-                    active: Binding<Bool>(get: { selectionState.isInListItem && selectionState.list == .OL }, set: { _ = $0 }),
-                    onHover: { over in hoverLabel = Text(over ? "Numbers" : "Paragraph Style") }
-                )
-            }
-            if contents.dent {
-                ToolbarImageButton(
-                    systemName: "increase.quotelevel",
-                    action: { observedWebView.selectedWebView?.indent() },
-                    active: Binding<Bool>(get: { selectionState.quote }, set: { _ = $0 }),
-                    onHover: { over in hoverLabel = Text(over ? "Indent" : "Paragraph Style") }
-                )
-                ToolbarImageButton(
-                    systemName: "decrease.quotelevel",
-                    action: { observedWebView.selectedWebView?.outdent() },
-                    active: Binding<Bool>(get: { selectionState.quote }, set: { _ = $0 }),
-                    onHover: { over in hoverLabel = Text(over ? "Outdent" : "Paragraph Style") }
-                )
             }
         }
         .frame(height: height)
