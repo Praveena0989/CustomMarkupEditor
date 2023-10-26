@@ -49,6 +49,7 @@ public struct StyleToolbar: View {
                     onHover: { over in hoverLabel = Text(over ? "Outdent" : "Paragraph Style") }
                 )
             }
+            Divider()
             // I spent a long time trying to make the drop-down buttons show in the proper font.
             // AFAICT, Apple is doing something aggressive to prevent that from happening.
             // Maybe it messes something up on MacOS. OTOH, I see it on OneNote as a kind of
