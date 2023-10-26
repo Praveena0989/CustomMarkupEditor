@@ -34,10 +34,7 @@ public struct MarkupToolbar: View {
                         if contents.leftToolbar {
                             MarkupEditor.leftToolbar!
                         }
-                        if contents.correction {
-                            if contents.leftToolbar { Divider() }
-                            CorrectionToolbar()
-                        }
+                        Divider() 
                         if contents.format {
                             FormatToolbar()
                         }
