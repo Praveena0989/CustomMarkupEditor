@@ -39,7 +39,6 @@ public struct MarkupToolbar: View {
                             CorrectionToolbar()
                         }
                         if contents.format {
-                            if contents.leftToolbar || contents.correction  || contents.insert || contents.style { Divider() }
                             FormatToolbar()
                         }
                         if contents.style {
