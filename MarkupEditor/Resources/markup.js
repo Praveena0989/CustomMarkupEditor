@@ -4830,7 +4830,7 @@ const _doListEnter = function(undoable=true, oldUndoerData) {
     const blockContainer = _findFirstParentElementInNodeNames(selNode, _listStyleTags);
     let newElement;
     if (blockContainer) {
-        newElement = document.createElement(blockContainer.nodeName);
+        newElement = document.createElement('span');
     } else {
         newElement = document.createElement('span');
     }
