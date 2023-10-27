@@ -1951,7 +1951,7 @@ const _doEnter = function(undoable=true) {
         // We are at the end of the last text node in some element, so we want to
         // create a new <P> to keep typing. Note this means we get <p> when hitting return
         // at the end of, say, <H3>. I believe this is the "expected" behavior.
-        const p = document.createElement('span');
+        const p = document.createElement('p');
         p.appendChild(document.createElement('br'));
         parent.parentNode.insertBefore(p, parent.nextSibling);
         const range = document.createRange();
@@ -4832,7 +4832,7 @@ const _doListEnter = function(undoable=true, oldUndoerData) {
     if (blockContainer) {
         newElement = document.createElement(blockContainer.nodeName);
     } else {
-        newElement = document.createElement('p');
+        newElement = document.createElement('span');
     }
     if (emptyListItem) {
         _doListOutdent(undoable);
@@ -5683,7 +5683,7 @@ const _splitList = function(listItemElement, newListType) {
             if (child.nodeType === Node.TEXT_NODE) {
                 if (child.textContent.trim().length > 0) {
                     // We want any bare text node children to be embedded in <p>
-                    const p = document.createElement('p');
+                    const p = document.createElement('span');
                     p.appendChild(child);
                     insertionPoint.parentNode.insertBefore(p, insertionPoint);
                 } else {
