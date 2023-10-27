@@ -1951,7 +1951,7 @@ const _doEnter = function(undoable=true) {
         // We are at the end of the last text node in some element, so we want to
         // create a new <P> to keep typing. Note this means we get <p> when hitting return
         // at the end of, say, <H3>. I believe this is the "expected" behavior.
-        const p = document.createElement('p');
+        const p = document.createElement('span');
         p.appendChild(document.createElement('br'));
         parent.parentNode.insertBefore(p, parent.nextSibling);
         const range = document.createRange();
