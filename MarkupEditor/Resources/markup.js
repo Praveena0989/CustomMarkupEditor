@@ -4832,7 +4832,7 @@ const _doListEnter = function(undoable=true, oldUndoerData) {
     if (blockContainer) {
         newElement = document.createElement(blockContainer.nodeName);
     } else {
-        newElement = document.createElement('span');
+        newElement = document.createElement('p');
     }
     if (emptyListItem) {
         _doListOutdent(undoable);
@@ -5683,7 +5683,7 @@ const _splitList = function(listItemElement, newListType) {
             if (child.nodeType === Node.TEXT_NODE) {
                 if (child.textContent.trim().length > 0) {
                     // We want any bare text node children to be embedded in <p>
-                    const p = document.createElement('span');
+                    const p = document.createElement('p');
                     p.appendChild(child);
                     insertionPoint.parentNode.insertBefore(p, insertionPoint);
                 } else {
