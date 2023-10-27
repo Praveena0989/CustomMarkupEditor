@@ -2865,7 +2865,7 @@ MU.resetSelection = function() {
  *
  * @return {string} The HTML for the editor element
  */
-MU.getHTML = function(pretty=true, clean=true) {
+MU.getHTML = function(pretty=false, clean=false) {
     let editor, text;
     if (clean) {
         const template = document.createElement('template');
@@ -4832,7 +4832,7 @@ const _doListEnter = function(undoable=true, oldUndoerData) {
     if (blockContainer) {
         newElement = document.createElement(blockContainer.nodeName);
     } else {
-        newElement = document.createElement('p');
+        newElement = document.createElement('span');
     }
     if (emptyListItem) {
         _doListOutdent(undoable);
