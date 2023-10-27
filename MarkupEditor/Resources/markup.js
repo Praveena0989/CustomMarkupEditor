@@ -6590,7 +6590,7 @@ const _cleanUpBRs = function(node) {
             const nextNextChild = (nextChild) ? nextChild.nextSibling : null;
             if ((!nextChild) || (nextChild && (!_isTextNode(nextChild) && !_isBRElement(nextChild)))) {
                 // This BR is not part of a text string, it's just sitting alone
-                const p = document.createElement('p');
+                const p = document.createElement('span');
                 p.appendChild(document.createElement('br'));
                 child.replaceWith(p);
             };
