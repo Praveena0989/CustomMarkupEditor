@@ -4832,7 +4832,7 @@ const _doListEnter = function(undoable=true, oldUndoerData) {
     if (blockContainer) {
         newElement = document.createElement(blockContainer.nodeName);
     } else {
-        newElement = document.createElement('p');
+        newElement = document.createElement('span');
     }
     if (emptyListItem) {
         _doListOutdent(undoable);
