@@ -2865,7 +2865,7 @@ MU.resetSelection = function() {
  *
  * @return {string} The HTML for the editor element
  */
-MU.getHTML = function(pretty=false, clean=false) {
+MU.getHTML = function(pretty=true, clean=true) {
     let editor, text;
     if (clean) {
         const template = document.createElement('template');
